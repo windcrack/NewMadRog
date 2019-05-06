@@ -1,0 +1,167 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+html{
+    font-size: 4px;
+}
+
+body{
+    padding: 0;
+    margin: 0;
+}
+
+@media screen and (max-width: 1323px) {
+    html {
+        font-size: 4px;
+    }
+
+    // :root {
+    //     font-size: 4px;
+    // }
+}
+
+@media screen and (max-width: 1176px) {
+    html {
+        font-size: 4px;
+    }
+
+    // :root {
+    //     font-size: 4px;
+    // }
+}
+
+@media screen and (max-width: 883px) {
+    html {
+        font-size: 4px;
+    }
+
+    // :root {
+    //     font-size: 4px;
+    // }
+}
+
+@function v($px, $basePix: 4, $minusPx: 0) {
+    @if $minusPx==0 {
+        @return ($px / $basePix)+rem;
+    }
+
+    @return 'calc('+($px / $basePix)+'rem - '+$minusPx+'px)';
+}
+
+:root{
+    --mainColor: #231F20;
+    --mainFontColor: #fff;
+    --border: 2px solid red;
+    --greenBnt: #16A600;
+    font-family: 'Oswald', sans-serif;
+}
+
+a{
+    color: var(--mainFontColor);
+    opacity: 0.75;
+    text-decoration: none;
+}
+
+button{
+    width: v(192);
+    height: v(40);
+    background-color: var(--greenBnt);
+    border: none;
+    
+}
+
+.greenBtn{
+    
+    transform: skewX(-30deg);
+    span{
+        transform: skewX(30deg);
+    }
+}
+
+// Main
+
+header{
+    background-color: var(--mainColor);
+    display: grid;
+    grid-template-columns: v(336) 1fr;
+    grid-template-rows: auto;
+    grid-template-areas: "logo social" "logo navMenu";
+    overflow: hidden;
+}
+.logo{
+    grid-area: logo;
+    margin: v(26) 0 v(25) v(48);
+}
+.headerSocial{
+    grid-area: social;
+    font-size: v(16);
+    line-height: v(24);
+    ul{
+        list-style: none;
+    }
+    display: flex;
+    justify-content: space-between;
+}
+.socialBlock{
+    margin-right: v(48);
+    display: flex;
+    align-items: center;
+    ul{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        li{
+            padding-right: v(24);
+            &:last-child{
+                padding-right: 0;
+            }
+        }
+    }
+}
+.phoneBlock{
+    color: var(--mainFontColor);
+    padding-left: v(48);
+    display: flex;
+    align-items: center; 
+    i{
+        margin-right: v(8);
+    }
+}
+.headerNav{
+    font-weight: 500;
+    font-size: v(16);
+    line-height: v(24);
+    text-align: center;
+    padding-left: v(72);
+    text-transform: uppercase;
+    grid-area: navMenu;
+    background-color: #fff;
+    display: flex;
+    align-items: center;
+    transform: skewX(-30deg);
+    width: 95%;
+    & > *{
+        transform: skewX(30deg); 
+    }
+    ul{
+        list-style: none;
+        display: flex;
+        a{
+            color: #000;
+        }
+        li{
+            margin-right: v(48);
+            &:last-child{
+                margin-right:0; 
+            }
+        }
+    }
+    
+}
+
+.mainBlock{
+    background-color: var(--mainColor);
+    color: var(--mainFontColor);
+}
