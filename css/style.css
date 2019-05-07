@@ -35,6 +35,7 @@ body {
   --mainFontColor: #fff;
   --border: 2px solid red;
   --greenBnt: #16A600;
+  --greenBntHover: #1EC700;
   font-family: 'Oswald', sans-serif;
 }
 
@@ -51,17 +52,60 @@ button {
   border: none;
 }
 
-.greenBtn {
+.button {
+  width: 48rem;
+  height: 10rem;
+  background-color: var(--greenBnt);
+  border: none;
+  font-size: 5rem;
+  line-height: 6rem;
   -webkit-transform: skewX(-30deg);
           transform: skewX(-30deg);
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  cursor: pointer;
 }
 
-.greenBtn span {
+.button > span,
+.button > i {
   -webkit-transform: skewX(30deg);
           transform: skewX(30deg);
+  text-align: center;
+}
+
+.button i {
+  padding-left: 2.5rem;
+  width: 6rem;
+  height: 6rem;
+  font-size: 4rem;
+  line-height: 6rem;
+  opacity: 0.5;
+}
+
+.button:hover {
+  background-color: var(--greenBntHover);
 }
 
 header {
+  background-color: var(--mainColor);
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+nav {
   background-color: var(--mainColor);
   display: -ms-grid;
   display: grid;
@@ -71,6 +115,7 @@ header {
       grid-template-rows: auto;
       grid-template-areas: "logo social" "logo navMenu";
   overflow: hidden;
+  width: 306.5rem;
 }
 
 .logo {
@@ -131,7 +176,7 @@ header {
 
 .phoneBlock {
   color: var(--mainFontColor);
-  padding-left: 12rem;
+  padding-left: 18rem;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -193,5 +238,52 @@ header {
 .mainBlock {
   background-color: var(--mainColor);
   color: var(--mainFontColor);
+  text-transform: uppercase;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.textMainBlock {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin: 24rem auto;
+  padding: 6rem 0;
+  text-align: left;
+}
+
+.textMainBlock .button {
+  margin-right: auto;
+}
+
+.mainTitle {
+  font-weight: bold;
+  font-size: 13rem;
+  line-height: 17rem;
+  width: 72rem;
+  padding: 6rem 0;
+}
+
+.subTitle {
+  font-weight: normal;
+  font-size: 6rem;
+  line-height: 12rem;
+  margin-right: auto;
+  padding: 0 0 6rem;
+}
+
+.imgBlock {
+  background-size: cover;
+  width: 50%;
+  margin-left: auto;
+  border: var(--border);
 }
 /*# sourceMappingURL=style.css.map */
