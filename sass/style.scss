@@ -10,6 +10,12 @@ html {
 body {
     padding: 0;
     margin: 0;
+    overflow-x: hidden;
+}
+
+img,
+iframe {
+    max-width: 100%;
 }
 
 @media screen and (max-width: 1323px) {
@@ -56,6 +62,7 @@ body {
     --border: 2px solid red;
     --greenBnt: #16A600;
     --greenBntHover: #1EC700;
+    --bgGradient: linear-gradient(14.76deg, rgba(21, 21, 21, 0.8) 18.61%, rgba(21, 21, 21, 0.3) 37.63%, rgba(21, 21, 21, 0) 90.23%);
     font-family: 'Oswald', sans-serif;
 }
 
@@ -89,12 +96,14 @@ button {
     letter-spacing: 0.08em;
     text-transform: uppercase;
     cursor: pointer;
-    & > span,
-    & > i {
+
+    &>span,
+    &>i {
         transform: skewX(30deg);
         text-align: center;
     }
-    i{
+
+    i {
         padding-left: v(10);
         width: v(24);
         height: v(24);
@@ -102,7 +111,8 @@ button {
         line-height: v(24);
         opacity: 0.5;
     }
-    &:hover{
+
+    &:hover {
         background-color: var(--greenBntHover);
     }
 }
@@ -110,10 +120,11 @@ button {
 
 // Main
 
-header{
+header {
     background-color: var(--mainColor);
     display: flex;
-    justify-content: center;
+    // justify-content: center;
+    
 }
 
 nav {
@@ -123,7 +134,8 @@ nav {
     grid-template-rows: auto;
     grid-template-areas: "logo social""logo navMenu";
     overflow: hidden;
-    width: v(1226);
+    min-width: 100%;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
 }
 
 .logo {
@@ -145,7 +157,6 @@ nav {
 }
 
 .socialBlock {
-    margin-right: v(48);
     display: flex;
     align-items: center;
 
@@ -166,7 +177,6 @@ nav {
 
 .phoneBlock {
     color: var(--mainFontColor);
-    padding-left: v(72);
     display: flex;
     align-items: center;
 
@@ -180,14 +190,15 @@ nav {
     font-size: v(16);
     line-height: v(24);
     text-align: center;
-    padding-left: v(72);
+    padding-right: v(72);
     text-transform: uppercase;
     grid-area: navMenu;
     background-color: #fff;
     display: flex;
     align-items: center;
+    justify-content: center;
     transform: skewX(-30deg);
-    width: 95%;
+    width: 100%;
 
     &>* {
         transform: skewX(30deg);
@@ -212,6 +223,13 @@ nav {
 
 }
 
+.headerSocialBlock {
+    display: flex;
+    justify-content: space-between;
+    width: 70%;
+    margin: 0 auto;
+}
+
 // firstBlock
 
 .mainBlock {
@@ -221,40 +239,99 @@ nav {
     display: flex;
 }
 
-.textMainBlock{
+.textMainBlock {
     display: flex;
     flex-direction: column;
     align-items: center;
     margin: v(96) auto;
     padding: v(24) 0;
     text-align: left;
-    .button{
+
+    .button {
         margin-right: auto;
+        margin-left: v(10);
     }
 }
 
-.mainTitle{
+.mainTitle {
     font-weight: bold;
     font-size: v(52);
     line-height: v(68);
     width: v(288);
     padding: v(24) 0;
 }
-.subTitle{
+
+.subTitle {
     font-weight: normal;
     font-size: v(24);
     line-height: v(48);
     margin-right: auto;
     padding: 0 0 v(24);
 }
-.imgBlock{
-    // transform: matrix(1,0,0,0, 50, 0);
-    // background: url('../img/img1.jpg') center no-repeat;
+
+.imgBlock {
     background-size: cover;
-    width: 50%;
+    width: 76.3%;
     margin-left: auto;
-    border: var(--border);
-    & > * {
-        // transform: skewX(-40deg);
+    overflow: hidden;
+    box-sizing: border-box;
+    z-index: 10;
+    position: relative;
+
+    img {
+        width: 100%;
+        height: 100%;
+        z-index: 5;
     }
 }
+
+.angle {
+    border-bottom: v(550) solid var(--mainColor);
+    border-right: v(150) solid transparent;
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    z-index: 150;
+}
+
+.blockVariantImg {
+    background: #fff;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.blockVariantImg {
+    display: flex;
+    align-items: center;
+
+    p {
+        font-weight: bold;
+        font-size: v(24);
+        line-height: v(36);
+        text-transform: uppercase;
+        color: #fff;
+        transform: translateY(v(-54)) translateX(v(24));
+    }
+
+    img {
+        min-width: 100%;
+        min-height: 100%;
+    }
+    a{
+        opacity: 1;
+    }
+}
+
+.blockImg {
+    width: v(408);
+    height: v(216);
+    margin: v(48) auto;
+    display: flex;
+    flex-direction: column;
+    background: var(--bgGradient);
+
+}
+// Select Monter
+
