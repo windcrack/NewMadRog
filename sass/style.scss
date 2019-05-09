@@ -77,9 +77,6 @@ button {
     height: v(40);
     background-color: var(--greenBnt);
     border: none;
-    // & > span{
-    //     transform: skewX(30deg);
-    // }
 }
 
 .button {
@@ -123,8 +120,7 @@ button {
 header {
     background-color: var(--mainColor);
     display: flex;
-    // justify-content: center;
-    
+
 }
 
 nav {
@@ -319,7 +315,8 @@ nav {
         min-width: 100%;
         min-height: 100%;
     }
-    a{
+
+    a {
         opacity: 1;
     }
 }
@@ -333,5 +330,145 @@ nav {
     background: var(--bgGradient);
 
 }
+
 // Select Monter
 
+.selectMonst {
+    background: var(--mainColor);
+    display: flex;
+    flex-direction: column;
+}
+
+.monstTitle {
+    margin: v(24) 0;
+    font-weight: bold;
+    font-size: v(32);
+    line-height: v(48);
+    text-align: center;
+    text-transform: uppercase;
+    color: var(--mainFontColor);
+}
+
+.monstSubTitle {
+    font-weight: normal;
+    font-size: v(16);
+    line-height: v(24);
+    color: var(--mainFontColor);
+    text-align: center;
+    column-count: 1;
+    column-width: v(792);
+    padding: 0 v(24) v(24);
+}
+
+.mostrImgBlock {
+    margin: 0 auto;
+    padding-bottom: v(48);
+    display: flex;
+}
+
+.mostrImg {
+    &:nth-child(1) {
+        transform: translateX(12%);
+
+    }
+
+    &:nth-child(2) {
+        transform: translateX(-12%);
+    }
+
+}
+
+// Socila block
+
+.social {
+    display: flex;
+    flex-direction: column;
+}
+
+.socialTitle {
+    font-weight: bold;
+    font-size: v(32);
+    line-height: v(48);
+    text-transform: uppercase;
+    text-align: center;
+    margin: v(24) auto;
+}
+
+.socialMainBlock {
+    margin: v(24) auto 0;
+    display: grid;
+    background: var(--mainColor);
+    grid-template-columns: v(504) repeat(2, v(312));
+    grid-template-rows: v(300);
+    grid-template-areas: "yt inst face";
+
+    &:last-child {
+        grid-template-columns: repeat(2, v(312)) v(504);
+        grid-template-areas: "face inst yt";
+        margin: 0 auto v(24);
+    }
+}
+
+.youTube {
+    grid-area: yt;
+}
+
+.instagramm {
+    grid-area: inst;
+}
+
+.theFacebook {
+    grid-area: face;
+    // this options if only no widget fb
+    text-align: center;
+    padding: 0 v(24);
+    margin: auto;
+    font-weight: normal;
+    font-size: v(16);
+    line-height: v(24);
+    color: var(--mainFontColor);
+    // ---------------------
+}
+
+// Footer
+
+footer {
+    display: flex;
+    flex-direction: column;
+    background: var(--mainColor);
+}
+
+.logoFooterBlock {
+    margin: v(26) auto v(25);
+}
+
+.lineFooterBlock {
+    background: #FFF;
+    opacity: 0.25;
+    height: 2px;
+    margin: 0 v(48);
+}
+
+.textFooterBlock {
+    display: flex;
+    justify-content: space-between;
+    color: var(--mainFontColor);
+    font-weight: normal;
+    font-size: v(16);
+    line-height: v(24);
+    margin: v(22) v(48) v(24);
+}
+
+// Product
+
+.productSubTitle{
+    column-count: 1;
+    column-width: v(366);
+    font-weight: normal;
+    font-size: v(16);
+    line-height: v(31);
+    color: var(--mainFontColor);
+    text-transform: uppercase;
+    text-align: center;
+    margin: 0 auto;
+}
