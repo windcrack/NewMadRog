@@ -62,6 +62,7 @@ iframe {
     --border: 2px solid red;
     --greenBnt: #16A600;
     --greenBntHover: #1EC700;
+    --greyBg: rgba(196, 196, 196, 0.25);
     --bgGradient: linear-gradient(14.76deg, rgba(21, 21, 21, 0.8) 18.61%, rgba(21, 21, 21, 0.3) 37.63%, rgba(21, 21, 21, 0) 90.23%);
     font-family: 'Oswald', sans-serif;
 }
@@ -83,6 +84,7 @@ button {
     width: v(192);
     height: v(40);
     background-color: var(--greenBnt);
+    color: var(--mainFontColor);
     border: none;
     font-size: v(20);
     line-height: v(24);
@@ -111,6 +113,32 @@ button {
 
     &:hover {
         background-color: var(--greenBntHover);
+    }
+}
+
+.buttonList {
+    width: v(251);
+    height: v(40);
+    transform: skewX(-30deg);
+    border: 2px solid var(--greenBnt);
+    box-sizing: border-box;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: 600;
+    font-size: v(16);
+    line-height: v(24);
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    cursor: pointer;
+
+    &:hover {
+        background: var(--greenBnt);
+        color: var(--mainFontColor);
+    }
+
+    &>span {
+        transform: skewX(30deg);
     }
 }
 
@@ -331,7 +359,7 @@ nav {
 
 }
 
-// Select Monter
+// Select Monster
 
 .selectMonst {
     background: var(--mainColor);
@@ -378,7 +406,7 @@ nav {
 
 }
 
-// Socila block
+// Social block
 
 .social {
     display: flex;
@@ -461,7 +489,7 @@ footer {
 
 // Product
 
-.productSubTitle{
+.productSubTitle {
     column-count: 1;
     column-width: v(366);
     font-weight: normal;
@@ -470,5 +498,179 @@ footer {
     color: var(--mainFontColor);
     text-transform: uppercase;
     text-align: center;
+    margin: 0 auto;
+}
+
+.tableProduct {
+    display: flex;
+    flex-direction: column;
+}
+
+.productTitle {
+    font-weight: bold;
+    font-size: v(32);
+    line-height: v(48);
+    text-transform: uppercase;
+    margin: v(56) auto v(24);
+}
+
+.listProductSelect {
+    margin: 0 auto v(32);
+
+    ul {
+        display: flex;
+
+    }
+}
+
+.technologyStats {
+    display: flex;
+}
+
+.technologyBlock {
+    display: flex;
+    margin: 0 auto;
+}
+
+.tableTechnology {
+    padding-left: v(24);
+}
+
+.tableText {
+    display: flex;
+    justify-content: space-between;
+    font-weight: 600;
+    font-size: v(16);
+    line-height: v(24);
+    width: v(668);
+    text-transform: uppercase;
+    align-items: center;
+
+    &:nth-child(odd) {
+        background-color: var(--greyBg);
+    }
+}
+
+.technologyStats {
+    display: flex;
+    margin-bottom: v(48);
+}
+
+.tableTextDescr {
+    padding-left: v(24);
+    height: v(48);
+    display: flex;
+    align-items: center;
+}
+
+.tableTextHar {
+    padding-right: v(24);
+    height: v(48);
+    display: flex;
+    align-items: center
+}
+
+.advantages {
+    display: flex;
+    flex-direction: column;
+}
+
+.advantagesTitle {
+    font-weight: bold;
+    font-size: v(32);
+    line-height: v(48);
+    margin: 0 auto v(24);
+    text-transform: uppercase;
+}
+
+.advatagesList {
+    font-weight: normal;
+    font-size: v(16);
+    line-height: v(24);
+    margin: 0 auto;
+    max-width: v(1104);
+    list-style-image: url('../img/list.svg');
+}
+
+.advantagesBlock {
+    margin: v(48) auto;
+    display: flex;
+    overflow: hidden;
+}
+
+.appointments,
+.spheres,
+.base {
+    position: relative;
+
+    img {
+        z-index: 1;
+    }
+}
+
+.appointments,
+.spheres {
+    margin-right: v(24);
+}
+
+.appText {
+    position: absolute;
+    color: var(--mainFontColor);
+    display: flex;
+    flex-direction: column;
+    width: v(288);
+    top: v(48);
+    left: v(24);
+    right: v(24);
+    z-index: 2;
+
+    h2 {
+        font-weight: bold;
+        font-size: v(24);
+        line-height: v(40);
+        margin: 0 auto v(24);
+        text-transform: uppercase;
+    }
+
+    ul {
+        font-weight: normal;
+        font-size: v(16);
+        line-height: v(24);
+        margin: 0 auto;
+        transform: translateX(v(32));
+        list-style-image: url('../img/listW.svg');
+
+        li {
+            padding-bottom: v(8);
+
+            &:last-child {
+                padding-bottom: 0;
+            }
+        }
+    }
+
+    span {
+        padding-top: v(24);
+        font-size: v(16);
+        line-height: v(24);
+        transform: translateX(v(32));
+    }
+}
+.tableSlider{
+    display: flex;
+    flex-direction: column;
+    .imgInSlider{
+        width: v(360);
+        height: v(240);
+        padding-right: v(24);
+        &:last-child{
+            padding-right: 0;
+        }
+    }
+    .button{
+        margin: v(48) auto v(55);
+    }
+}
+.tableSliderImg{
     margin: 0 auto;
 }
