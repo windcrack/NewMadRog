@@ -256,11 +256,22 @@ nav {
 
 // firstBlock
 
-.mainBlock {
+.mainBlock,
+.mainBlockProduct {
     background-color: var(--mainColor);
     color: var(--mainFontColor);
     text-transform: uppercase;
     display: flex;
+}
+
+.mainBlockProduct {
+    .imgBlock {
+        transform: skewX(23deg) translateX(15.5%);
+
+        img {
+            transform: skewX(-23deg) translateX(-14%);
+        }
+    }
 }
 
 .textMainBlock {
@@ -270,6 +281,7 @@ nav {
     margin: v(96) auto;
     padding: v(24) 0;
     text-align: left;
+    transform: translateX(v(72));
 
     .button {
         margin-right: auto;
@@ -283,6 +295,8 @@ nav {
     line-height: v(68);
     width: v(288);
     padding: v(24) 0;
+    text-align: left;
+    align-self: baseline;
 }
 
 .subTitle {
@@ -294,8 +308,9 @@ nav {
 }
 
 .imgBlock {
+    transform: skewX(23deg) translateX(14.5%);
+    width: 100%;
     background-size: cover;
-    width: 76.3%;
     margin-left: auto;
     overflow: hidden;
     box-sizing: border-box;
@@ -303,8 +318,9 @@ nav {
     position: relative;
 
     img {
-        width: 100%;
-        height: 100%;
+        transform: skewX(-23deg) translateX(-12%);
+        min-width: 100%;
+        min-height: 100%;
         z-index: 5;
     }
 }
@@ -430,7 +446,7 @@ nav {
     grid-template-rows: v(300);
     grid-template-areas: "yt inst face";
 
-    &:last-child {
+    &:nth-child(odd) {
         grid-template-columns: repeat(2, v(312)) v(504);
         grid-template-areas: "face inst yt";
         margin: 0 auto v(24);
@@ -495,10 +511,11 @@ footer {
     font-weight: normal;
     font-size: v(16);
     line-height: v(31);
+    width: v(366);
     color: var(--mainFontColor);
     text-transform: uppercase;
-    text-align: center;
-    margin: 0 auto;
+    text-align: justify;
+    margin: 0 auto v(24);
 }
 
 .tableProduct {
@@ -656,21 +673,48 @@ footer {
         transform: translateX(v(32));
     }
 }
-.tableSlider{
+
+.tableSlider {
     display: flex;
     flex-direction: column;
-    .imgInSlider{
+
+    .imgInSlider {
         width: v(360);
         height: v(240);
         padding-right: v(24);
-        &:last-child{
+
+        &:last-child {
             padding-right: 0;
         }
     }
-    .button{
+
+    .button {
         margin: v(48) auto v(55);
     }
+
+
 }
-.tableSliderImg{
+
+.arrw {
+    color: #000;
+    font-size: v(40);
+    line-height: v(24);
+}
+
+.tableSliderImg {
     margin: 0 auto;
+    display: flex !important;
+    flex-direction: row;
+    max-width: v(1100);
+    align-items: center;
+
+    i {
+        &:first-child {
+            margin-right: v(24);
+        }
+
+        &:last-child {
+            margin-left: v(24);
+        }
+    }
 }
