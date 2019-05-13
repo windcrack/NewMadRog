@@ -400,9 +400,9 @@ nav {
     line-height: v(24);
     color: var(--mainFontColor);
     text-align: center;
-    column-count: 1;
-    column-width: v(792);
+    width: v(792);
     padding: 0 v(24) v(24);
+    margin: 0 auto;
 }
 
 .mostrImgBlock {

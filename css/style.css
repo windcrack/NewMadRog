@@ -465,11 +465,9 @@ nav {
   line-height: 6rem;
   color: var(--mainFontColor);
   text-align: center;
-  -webkit-column-count: 1;
-          column-count: 1;
-  -webkit-column-width: 198rem;
-          column-width: 198rem;
+  width: 198rem;
   padding: 0 6rem 6rem;
+  margin: 0 auto;
 }
 
 .mostrImgBlock {
