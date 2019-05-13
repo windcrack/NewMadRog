@@ -42,6 +42,7 @@ iframe {
   --border: 2px solid red;
   --greenBnt: #16A600;
   --greenBntHover: #1EC700;
+  --linkColor: #735800;
   --greyBg: rgba(196, 196, 196, 0.25);
   --bgGradient: linear-gradient(14.76deg, rgba(21, 21, 21, 0.8) 18.61%, rgba(21, 21, 21, 0.3) 37.63%, rgba(21, 21, 21, 0) 90.23%);
   font-family: 'Oswald', sans-serif;
@@ -852,5 +853,102 @@ footer {
 
 .tableSliderImg i:last-child {
   margin-left: 6rem;
+}
+
+.contact {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.contactTitle {
+  font-size: 10rem;
+  line-height: 16rem;
+  text-transform: uppercase;
+  margin: 6rem 12rem;
+}
+
+.contactBlockText {
+  font-size: 4rem;
+  line-height: 6rem;
+  text-align: center;
+  text-transform: uppercase;
+  width: 90rem;
+  margin: auto;
+}
+
+.contactHeader {
+  font-weight: 500;
+  margin-bottom: 6rem;
+}
+
+.contactBody {
+  margin: 0 auto;
+  font-size: 4rem;
+  line-height: 6rem;
+  text-align: center;
+  margin-bottom: 6rem;
+}
+
+.contactBody a {
+  color: var(--linkColor);
+  opacity: 0.8;
+}
+
+.contactBody a:hover {
+  opacity: 1;
+}
+
+.contactFooter {
+  margin-bottom: 6rem;
+}
+
+.contactFooter a {
+  color: var(--linkColor);
+  opacity: 0.8;
+}
+
+.contactFooter a:hover {
+  opacity: 1;
+}
+
+.contactMap iframe {
+  min-width: 100%;
+}
+
+.servis {
+  margin: 12rem auto;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.servisBlock {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  margin: 0 auto;
+}
+
+.servisBlockText {
+  width: 138rem;
+}
+
+.servisTitle {
+  font-size: 12rem;
+  line-height: 16rem;
+  font-weight: bold;
+}
+
+.servisTextDescr {
+  font-weight: normal;
+  font-size: 4rem;
+  line-height: 6rem;
+  margin: 6rem 0;
+  border-radius: 4px;
 }
 /*# sourceMappingURL=style.css.map */
