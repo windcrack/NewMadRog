@@ -63,7 +63,9 @@ iframe {
     --greenBnt: #16A600;
     --greenBntHover: #1EC700;
     --linkColor: #735800;
+    --borderColor: #FFD400;
     --greyBg: rgba(196, 196, 196, 0.25);
+    --popupGradient: linear-gradient(180deg, rgba(13, 14, 13, 1)0%, rgba(15, 19, 16, 1) 100%);
     --bgGradient: linear-gradient(14.76deg, rgba(21, 21, 21, 0.8) 18.61%, rgba(21, 21, 21, 0.3) 37.63%, rgba(21, 21, 21, 0) 90.23%);
     font-family: 'Oswald', sans-serif;
 }
@@ -709,7 +711,14 @@ footer {
     max-width: v(1100);
     align-items: center;
 
+    a {
+        opacity: 1;
+        margin-right: v(24);
+    }
+
     i {
+        cursor: pointer;
+
         &:first-child {
             margin-right: v(24);
         }
@@ -734,7 +743,7 @@ footer {
     margin: v(24) v(48);
 }
 
-.contactBlockText{
+.contactBlockText {
     font-size: v(16);
     line-height: v(24);
     text-align: center;
@@ -753,56 +762,201 @@ footer {
     font-size: v(16);
     line-height: v(24);
     text-align: center;
-    a{
+
+    a {
         color: var(--linkColor);
         opacity: 0.8;
-        &:hover{
+
+        &:hover {
             opacity: 1;
         }
     }
+
     margin-bottom: v(24);
 }
 
-.contactFooter{
+.contactFooter {
     margin-bottom: v(24);
-    a{
-        color:var(--linkColor);
+
+    a {
+        color: var(--linkColor);
         opacity: 0.8;
-        &:hover{
+
+        &:hover {
             opacity: 1;
         }
     }
 }
-.contactMap{
-    iframe{
+
+.contactMap {
+    iframe {
         min-width: 100%;
     }
 }
 
 // Servis
 
-.servis{
+.servis {
     margin: v(48) auto;
     display: flex;
 }
 
-.servisBlock{
+.servisBlock {
     display: flex;
     margin: 0 auto;
 }
 
-.servisBlockText{
+.servisBlockText {
     width: v(552);
 }
-.servisTitle{
+
+.servisTitle {
     font-size: v(48);
     line-height: v(64);
     font-weight: bold;
 }
-.servisTextDescr{
+
+.servisTextDescr {
     font-weight: normal;
     font-size: v(16);
     line-height: v(24);
     margin: v(24) 0;
     border-radius: 4px;
+}
+
+// Modal img
+
+.modalImg {
+    display: none;
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.4);
+    z-index: 3;
+}
+
+.modalBody {
+    position: fixed;
+    top: 3%;
+    bottom: 3%;
+    left: 10%;
+    right: 10%;
+    width: 80vw;
+    height: 80vh;
+    z-index: 100;
+    transform: translateY(-5%);
+    z-index: 3;
+
+    img {
+        min-width: 100%;
+        min-height: 100%;
+        z-index: 3;
+    }
+}
+
+.close {
+    display: flex;
+    justify-content: flex-end;
+    font-size: v(12);
+    line-height: v(24);
+    color: var(--borderColor);
+    align-items: center;
+    margin: v(8) v(8) 0 0;
+    cursor: pointer;
+
+    i {
+        padding-left: v(8);
+        font-size: v(16);
+        line-height: v(24);
+        text-transform: uppercase;
+    }
+}
+
+.modalBodyPopupS {
+    display: flex;
+    flex-direction: column;
+    width: v(360);
+    height: v(672);
+    background-color: #000;
+    border: 1px solid var(--borderColor);
+    box-sizing: border-box;
+}
+
+.modalPopupTitle {
+    color: #fff;
+    font-weight: normal;
+    font-size: v(24);
+    line-height: v(43);
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    text-align: center;
+    margin: v(48) 0 v(24);
+}
+
+.modalPopup {
+    display: flex;
+    flex-direction: column;
+    color: #fff;
+    padding: 0 v(24);
+
+    label {
+        text-align: left;
+        font-weight: 500;
+        font-size: v(12);
+        line-height: v(24);
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+
+        &:last-child {
+            text-transform: none;
+        }
+    }
+
+    i {
+        opacity: 1;
+        margin-right: v(16);
+    }
+
+    input {
+        margin-bottom: v(24);
+        color: rgba(255, 255, 255, 0.9);
+        height: v(40);
+        padding: v(8);
+        border: 1px solid var(--borderColor);
+        box-sizing: border-box;
+        border-radius: 4px;
+    }
+
+    textarea {
+        height: v(96);
+        resize: none;
+    }
+
+    .button {
+        margin: 0 auto;
+    }
+}
+
+.modalRules {
+    font-weight: normal;
+    font-size: v(12);
+    line-height: v(17);
+    margin: v(16) 0 v(28);
+    display: flex;
+
+    input {
+        align-self: flex-start;
+        margin-right: v(8);
+        margin-bottom: 0;
+        margin-top: v(12);
+    }
+
+    a {
+        color: var(--borderColor);
+        opacity: 1;
+    }
 }
