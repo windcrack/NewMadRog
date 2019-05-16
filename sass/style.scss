@@ -116,6 +116,18 @@ button {
 
     &:hover {
         background-color: var(--greenBntHover);
+        padding: 0 v(23);
+        animation: hoverMany 300ms;
+    }
+}
+
+@keyframes hoverMany {
+    0% {
+        padding: 0;
+    }
+
+    100% {
+        padding: 0 v(23);
     }
 }
 
@@ -168,6 +180,9 @@ nav {
 .logo {
     grid-area: logo;
     margin: v(26) 0 v(25) v(48);
+    a{
+        opacity: 1;
+    }
 }
 
 .headerSocial {
@@ -826,7 +841,8 @@ footer {
 
 // Modal img
 
-.modalImg {
+.modalImg,
+.modalPopup {
     display: none;
     position: fixed;
     top: 0;
@@ -836,7 +852,7 @@ footer {
     width: 100vw;
     height: 100vh;
     background-color: rgba(0, 0, 0, 0.4);
-    z-index: 3;
+    z-index: 6;
 }
 
 .modalBody {
@@ -881,23 +897,43 @@ footer {
     flex-direction: column;
     width: v(360);
     height: v(672);
-    background-color: #000;
+    background: var(--popupGradient);
     border: 1px solid var(--borderColor);
     box-sizing: border-box;
+    z-index: 6;
 }
 
-.modalPopupTitle {
+.modalPopupTitle,
+.modalPopupTitleOther {
     color: #fff;
     font-weight: normal;
-    font-size: v(24);
-    line-height: v(43);
     letter-spacing: 0.08em;
     text-transform: uppercase;
     text-align: center;
-    margin: v(48) 0 v(24);
 }
 
-.modalPopup {
+.modalSubTitle {
+    font-weight: normal;
+    font-size: v(16);
+    line-height: v(28);
+    text-transform: uppercase;
+    text-align: center;
+    color: #fff;
+}
+
+.modalPopupTitle {
+    margin: v(48) 0 v(24);
+    font-size: v(24);
+    line-height: v(43);
+}
+
+.modalPopupTitleOther {
+    margin-top: v(16);
+    font-size: v(32);
+    line-height: v(57);
+}
+
+.modalPopupForm {
     display: flex;
     flex-direction: column;
     color: #fff;
@@ -907,7 +943,7 @@ footer {
         text-align: left;
         font-weight: 500;
         font-size: v(12);
-        line-height: v(24);
+        line-height: v(17);
         letter-spacing: 0.08em;
         text-transform: uppercase;
 
@@ -923,17 +959,24 @@ footer {
 
     input {
         margin-bottom: v(24);
-        color: rgba(255, 255, 255, 0.9);
+        color: #000;
         height: v(40);
         padding: v(8);
         border: 1px solid var(--borderColor);
         box-sizing: border-box;
         border-radius: 4px;
+        background-color: rgba(255, 255, 255, 0.9);
     }
 
     textarea {
         height: v(96);
         resize: none;
+        background-color: rgba(255, 255, 255, 0.9);
+        border: 1px solid var(--borderColor);
+        box-sizing: border-box;
+        border-radius: 4px;
+        color: #000;
+        padding: v(8);
     }
 
     .button {

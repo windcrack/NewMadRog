@@ -105,6 +105,27 @@ button {
 
 .button:hover {
   background-color: var(--greenBntHover);
+  padding: 0 5.75rem;
+  -webkit-animation: hoverMany 300ms;
+          animation: hoverMany 300ms;
+}
+
+@-webkit-keyframes hoverMany {
+  0% {
+    padding: 0;
+  }
+  100% {
+    padding: 0 5.75rem;
+  }
+}
+
+@keyframes hoverMany {
+  0% {
+    padding: 0;
+  }
+  100% {
+    padding: 0 5.75rem;
+  }
 }
 
 .buttonList {
@@ -170,6 +191,10 @@ nav {
   -ms-grid-column: 1;
   grid-area: logo;
   margin: 6.5rem 0 6.25rem 12rem;
+}
+
+.logo a {
+  opacity: 1;
 }
 
 .headerSocial {
@@ -961,7 +986,8 @@ footer {
   border-radius: 4px;
 }
 
-.modalImg {
+.modalImg,
+.modalPopup {
   display: none;
   position: fixed;
   top: 0;
@@ -971,7 +997,7 @@ footer {
   width: 100vw;
   height: 100vh;
   background-color: rgba(0, 0, 0, 0.4);
-  z-index: 3;
+  z-index: 6;
 }
 
 .modalBody {
@@ -1028,24 +1054,44 @@ footer {
           flex-direction: column;
   width: 90rem;
   height: 168rem;
-  background-color: #000;
+  background: var(--popupGradient);
   border: 1px solid var(--borderColor);
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
+  z-index: 6;
 }
 
-.modalPopupTitle {
+.modalPopupTitle,
+.modalPopupTitleOther {
   color: #fff;
   font-weight: normal;
-  font-size: 6rem;
-  line-height: 10.75rem;
   letter-spacing: 0.08em;
   text-transform: uppercase;
   text-align: center;
-  margin: 12rem 0 6rem;
 }
 
-.modalPopup {
+.modalSubTitle {
+  font-weight: normal;
+  font-size: 4rem;
+  line-height: 7rem;
+  text-transform: uppercase;
+  text-align: center;
+  color: #fff;
+}
+
+.modalPopupTitle {
+  margin: 12rem 0 6rem;
+  font-size: 6rem;
+  line-height: 10.75rem;
+}
+
+.modalPopupTitleOther {
+  margin-top: 4rem;
+  font-size: 8rem;
+  line-height: 14.25rem;
+}
+
+.modalPopupForm {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -1057,41 +1103,49 @@ footer {
   padding: 0 6rem;
 }
 
-.modalPopup label {
+.modalPopupForm label {
   text-align: left;
   font-weight: 500;
   font-size: 3rem;
-  line-height: 6rem;
+  line-height: 4.25rem;
   letter-spacing: 0.08em;
   text-transform: uppercase;
 }
 
-.modalPopup label:last-child {
+.modalPopupForm label:last-child {
   text-transform: none;
 }
 
-.modalPopup i {
+.modalPopupForm i {
   opacity: 1;
   margin-right: 4rem;
 }
 
-.modalPopup input {
+.modalPopupForm input {
   margin-bottom: 6rem;
-  color: rgba(255, 255, 255, 0.9);
+  color: #000;
   height: 10rem;
   padding: 2rem;
   border: 1px solid var(--borderColor);
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
   border-radius: 4px;
+  background-color: rgba(255, 255, 255, 0.9);
 }
 
-.modalPopup textarea {
+.modalPopupForm textarea {
   height: 24rem;
   resize: none;
+  background-color: rgba(255, 255, 255, 0.9);
+  border: 1px solid var(--borderColor);
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  border-radius: 4px;
+  color: #000;
+  padding: 2rem;
 }
 
-.modalPopup .button {
+.modalPopupForm .button {
   margin: 0 auto;
 }
 
