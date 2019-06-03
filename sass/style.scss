@@ -66,6 +66,7 @@ iframe {
     --borderColor: #FFD400;
     --greyBg: rgba(196, 196, 196, 0.25);
     --popupGradient: linear-gradient(180deg, rgba(13, 14, 13, 1)0%, rgba(15, 19, 16, 1) 100%);
+    --monstGradient: rgba(21, 21, 21, 0.8);
     --bgGradient: linear-gradient(14.76deg, rgba(21, 21, 21, 0.8) 18.61%, rgba(21, 21, 21, 0.3) 37.63%, rgba(21, 21, 21, 0) 90.23%);
     font-family: 'Oswald', sans-serif;
 }
@@ -428,7 +429,44 @@ nav {
     display: flex;
 }
 
+.mostrBlockHover{
+    position: absolute;
+    top:0;
+    left: 0;
+    min-width: 100%;
+    min-height: 100%;
+    background: var(--monstGradient);
+    z-index: 2;
+    display: none;
+    &:nth-child(2){
+        // transform: skewX(21deg);
+        left: v(78);
+    }
+}
+.mostrBlockHoverTitle{
+    margin: 0 auto;
+    color: #fff;
+    font-weight: bold;
+    font-size: v(28);
+    line-height: v(40);
+    text-align: center;
+    
+}
+
+.hoverContent{
+    width: v(216);
+    display: flex;
+    flex-direction: column;
+    margin: v(168) auto 0;
+    .button{
+        margin: 0 auto;
+    }
+    // transform: skewX(-21deg);
+}
+
 .mostrImg {
+    position: relative;
+    z-index: 1;
     &:nth-child(1) {
         transform: translateX(12%);
 
@@ -436,6 +474,11 @@ nav {
 
     &:nth-child(2) {
         transform: translateX(-12%);
+    }
+    &:hover{
+        .mostrBlockHover{
+            display: block;
+        }
     }
 
 }

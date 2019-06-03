@@ -46,6 +46,7 @@ iframe {
   --borderColor: #FFD400;
   --greyBg: rgba(196, 196, 196, 0.25);
   --popupGradient: linear-gradient(180deg, rgba(13, 14, 13, 1)0%, rgba(15, 19, 16, 1) 100%);
+  --monstGradient: rgba(21, 21, 21, 0.8);
   --bgGradient: linear-gradient(14.76deg, rgba(21, 21, 21, 0.8) 18.61%, rgba(21, 21, 21, 0.3) 37.63%, rgba(21, 21, 21, 0) 90.23%);
   font-family: 'Oswald', sans-serif;
 }
@@ -505,6 +506,51 @@ nav {
   display: flex;
 }
 
+.mostrBlockHover {
+  position: absolute;
+  top: 0;
+  left: 0;
+  min-width: 100%;
+  min-height: 100%;
+  background: var(--monstGradient);
+  z-index: 2;
+  display: none;
+}
+
+.mostrBlockHover:nth-child(2) {
+  left: 19.5rem;
+}
+
+.mostrBlockHoverTitle {
+  margin: 0 auto;
+  color: #fff;
+  font-weight: bold;
+  font-size: 7rem;
+  line-height: 10rem;
+  text-align: center;
+}
+
+.hoverContent {
+  width: 54rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  margin: 42rem auto 0;
+}
+
+.hoverContent .button {
+  margin: 0 auto;
+}
+
+.mostrImg {
+  position: relative;
+  z-index: 1;
+}
+
 .mostrImg:nth-child(1) {
   -webkit-transform: translateX(12%);
           transform: translateX(12%);
@@ -513,6 +559,10 @@ nav {
 .mostrImg:nth-child(2) {
   -webkit-transform: translateX(-12%);
           transform: translateX(-12%);
+}
+
+.mostrImg:hover .mostrBlockHover {
+  display: block;
 }
 
 .social {
