@@ -5,9 +5,12 @@ document.addEventListener('DOMContentLoaded', () => {
         callBack = document.querySelector('.callBack'),
         request = document.querySelector('.request'),
         sale = document.querySelector('.sale'),
+        phone = document.querySelector('.phoneBlock > a'),
         modalPopup = document.querySelector('.modalPopup'),
         modalImg = document.querySelector('.modalImg');
 
+    console.log(phone);
+    
     function startSlider(init) {
         $(init).slick({
             dots: false,
@@ -134,6 +137,14 @@ document.addEventListener('DOMContentLoaded', () => {
         }
 
     }
+
+    function innerPhone() {
+        if(document.documentElement.clientWidth <= 800){
+            phone.setAttribute('href', 'tel:88005055812')
+        }
+    }
+
+    innerPhone();
 
     startSlider(initSlider)
     openBlockImg(imgSlider, modalImg)

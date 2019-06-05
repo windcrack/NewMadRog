@@ -181,9 +181,14 @@ nav {
 .logo {
     grid-area: logo;
     margin: v(26) 0 v(25) v(48);
-    a{
+
+    a {
         opacity: 1;
     }
+    @media (max-width: 800px){
+        margin: v(16) v(26);
+    }
+    
 }
 
 .headerSocial {
@@ -197,12 +202,26 @@ nav {
 
     display: flex;
     justify-content: space-between;
+    @media (max-width: 800px){
+        margin: v(24) 0;
+    }
+}
+
+.burgerMenuInMobVesion{
+    display: none;
+    @media (max-width: 800px){
+        display: block;
+        color: #fff;
+        cursor: pointer;
+    }
 }
 
 .socialBlock {
     display: flex;
     align-items: center;
-
+    @media (max-width: 800px){
+        display: none;
+    }
     ul {
         display: flex;
         align-items: center;
@@ -263,6 +282,9 @@ nav {
             }
         }
     }
+    @media (max-width: 800px){
+        display: none;
+    }
 
 }
 
@@ -282,6 +304,11 @@ nav {
     text-transform: uppercase;
     display: flex;
 }
+.mainBlock{
+    @media (max-width: 800px){
+        height: 100vh;
+    }
+}
 
 .mainBlockProduct {
     .imgBlock {
@@ -290,7 +317,15 @@ nav {
         img {
             transform: skewX(-23deg) translateX(-14%);
         }
+        @media (max-width: 800px){
+            transform: skewX(0) translateX(0);
+            img{
+                transform: skewX(0) translateX(0);
+            }
+
+        }
     }
+
 }
 
 .textMainBlock {
@@ -301,7 +336,14 @@ nav {
     padding: v(24) 0;
     text-align: left;
     transform: translateX(v(72));
-
+    @media (max-width: 800px) {
+        position: absolute;
+        z-index: 6;
+        left: 50%;
+        transform: translateX(-50%) translateY(-50%);
+        top: 50%;
+        margin: 0;
+    }
     .button {
         margin-right: auto;
         margin-left: v(10);
@@ -333,14 +375,20 @@ nav {
     margin-left: auto;
     overflow: hidden;
     box-sizing: border-box;
-    z-index: 10;
+    z-index: 6;
     position: relative;
-
+    @media (max-width: 800px){
+        transform: skewX(0) translateX(0);
+        z-index: 5;
+    }
     img {
         transform: skewX(-23deg) translateX(-12%);
         min-width: 100%;
         min-height: 100%;
         z-index: 5;
+        @media (max-width: 800px){
+            transform: skewX(0) translateX(0);
+        }
     }
 }
 
@@ -359,6 +407,9 @@ nav {
     display: flex;
     justify-content: space-around;
     align-items: center;
+    @media (max-width: 800px){
+        flex-direction: column;
+    }
 }
 
 .blockVariantImg {
@@ -421,66 +472,122 @@ nav {
     width: v(792);
     padding: 0 v(24) v(24);
     margin: 0 auto;
+    @media (max-width: 800px){
+        max-width: v(728);
+    }
 }
 
 .mostrImgBlock {
     margin: 0 auto;
     padding-bottom: v(48);
     display: flex;
+    @media (max-width: 800px){
+        flex-direction: column;
+    }
 }
 
-.mostrBlockHover{
+.mostrBlockHover {
     position: absolute;
-    top:0;
+    top: 0;
     left: 0;
     min-width: 100%;
     min-height: 100%;
     background: var(--monstGradient);
     z-index: 2;
     display: none;
-    &:nth-child(2){
-        // transform: skewX(21deg);
-        left: v(78);
-    }
 }
-.mostrBlockHoverTitle{
+
+.mostrBlockHoverTitle {
     margin: 0 auto;
     color: #fff;
     font-weight: bold;
     font-size: v(28);
     line-height: v(40);
     text-align: center;
-    
+    padding-bottom: v(24);
 }
 
-.hoverContent{
+.hoverContent {
     width: v(216);
     display: flex;
     flex-direction: column;
     margin: v(168) auto 0;
-    .button{
+
+    a {
+        opacity: 1;
+    }
+
+    .button {
         margin: 0 auto;
     }
-    // transform: skewX(-21deg);
+
+
 }
 
 .mostrImg {
     position: relative;
     z-index: 1;
+
     &:nth-child(1) {
         transform: translateX(12%);
+        animation: animationLeft 500ms;
+
+        .hoverContent {
+            margin: v(168) auto 0 v(108);
+        }
+        @media (max-width: 800px){
+            transform: translateX(0);
+            img{
+                content: url('../img/maxresdefault.jpg');
+            }
+        }
 
     }
 
     &:nth-child(2) {
         transform: translateX(-12%);
-    }
-    &:hover{
-        .mostrBlockHover{
-            display: block;
+        overflow: hidden;
+        animation: animationRight 500ms;
+
+        .mostrBlockHover {
+            transform: skewX(-21deg);
+            left: v(78);
+        }
+
+        .hoverContent {
+            transform: skewX(21deg);
+
+        }
+        @media (max-width: 800px){
+            transform: translateX(0);
         }
     }
 
+    &:hover {
+        .mostrBlockHover {
+            display: block;
+        }
+    }
+}
+
+@keyframes animateLeft {
+    0% {
+        transform: translateX(0%);
+    }
+
+    100% {
+        transform: translateX(12%);
+    }
+}
+
+@keyframes animateRight {
+    0% {
+        transform: translateX(0%);
+    }
+
+    100% {
+        transform: translateX(-12%);
+    }
 }
 
 // Social block
@@ -506,16 +613,28 @@ nav {
     grid-template-columns: v(504) repeat(2, v(312));
     grid-template-rows: v(300);
     grid-template-areas: "yt inst face";
+    @media (max-width: 800px){
+        grid-template-columns: 1fr;
+        grid-template-areas: "yt" "inst" "face";
+    }
 
     &:nth-child(odd) {
         grid-template-columns: repeat(2, v(312)) v(504);
         grid-template-areas: "face inst yt";
         margin: 0 auto v(24);
+        @media(max-width:800px){
+            grid-template-columns: 1fr;
+            grid-template-areas: "yt" "inst" "face";
+        }
     }
 }
 
 .youTube {
     grid-area: yt;
+    iframe{
+        max-width: v(560);
+        max-height: v(300);
+    }
 }
 
 .instagramm {
@@ -944,6 +1063,8 @@ footer {
     border: 1px solid var(--borderColor);
     box-sizing: border-box;
     z-index: 6;
+    position: fixed;
+    right: 0;
 }
 
 .modalPopupTitle,
@@ -1046,3 +1167,4 @@ footer {
         opacity: 1;
     }
 }
+
