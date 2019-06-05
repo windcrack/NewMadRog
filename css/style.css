@@ -186,6 +186,13 @@ nav {
           box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
 }
 
+@media (max-width: 800px) {
+  nav {
+    -ms-grid-columns: 29rem 1fr;
+        grid-template-columns: 29rem 1fr;
+  }
+}
+
 .logo {
   -ms-grid-row: 1;
   -ms-grid-row-span: 2;
@@ -784,8 +791,8 @@ nav {
 
 @media (max-width: 800px) {
   .socialMainBlock {
-    -ms-grid-columns: 1fr;
-        grid-template-columns: 1fr;
+    -ms-grid-columns: 100%;
+        grid-template-columns: 100%;
         grid-template-areas: "yt" "inst" "face";
   }
 }
@@ -805,6 +812,15 @@ nav {
   }
 }
 
+@media (max-width: 800px) {
+  .youTube,
+  .instagramm,
+  .theFacebook {
+    margin: auto;
+    min-width: 140rem;
+  }
+}
+
 .youTube {
   -ms-grid-row: 1;
   -ms-grid-column: 3;
@@ -812,8 +828,8 @@ nav {
 }
 
 .youTube iframe {
-  max-width: 140rem;
-  max-height: 75rem;
+  min-width: 140rem;
+  min-height: 75rem;
 }
 
 .instagramm {
@@ -822,12 +838,17 @@ nav {
   grid-area: inst;
 }
 
+.instagramm img {
+  min-width: 100%;
+  min-height: 100%;
+}
+
 .theFacebook {
   -ms-grid-row: 1;
   -ms-grid-column: 1;
   grid-area: face;
   text-align: center;
-  padding: 0 6rem;
+  padding: 6rem 6rem;
   margin: auto;
   font-weight: normal;
   font-size: 4rem;
@@ -869,6 +890,21 @@ footer {
   font-size: 4rem;
   line-height: 6rem;
   margin: 5.5rem 12rem 6rem;
+}
+
+@media (max-width: 800px) {
+  .textFooterBlock {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+  .textFooterBlock p:nth-child(2) {
+    margin: 6rem 0;
+  }
 }
 
 .productSubTitle {
