@@ -140,7 +140,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     function innerPhone() {
         if(document.documentElement.clientWidth <= 800){
-            phone.setAttribute('href', 'tel:88005055812')
+            phone.setAttribute('href', 'tel:88005055008')
         }
     }
 
