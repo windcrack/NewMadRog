@@ -1,0 +1,13 @@
+{
+  "dependencies": {
+    "next": "^8.1.0",
+    "now": "^15.4.0",
+    "react": "^16.8.6",
+    "react-dom": "^16.8.6"
+  },
+  "name": "MadRog",
+  "version": "1.0.0",
+  "main": "index.js",
+  "author": "Saha <windcrack@mail.ru>",
+  "license": "MIT"
+}
