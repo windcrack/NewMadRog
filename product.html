@@ -14,58 +14,69 @@
 <body>
     <header>
         <nav>
-            <div class="logo"><a href="index.html"><img src="img/logo.png" alt="Логотип"></a></div>
-            <div class="headerSocial">
-                <div class="headerSocialBlock">
-                    <div class="phoneBlock"><a hfre="#"><i class="far fa-mobile"></i> 8 (800) 505-58-12</a></div>
-                    <div class="socialBlock">
-                        <ul>
-                            <li><a href="#"><i class="far fa-envelope-open"></i></a></li>
-                            <li><a href="#"><i class="fab fa-facebook"></i></a></li>
-                            <li><a href="#"><i class="fab fa-instagram"></i></a></li>
-                            <li><a href="#"><i class="fab fa-youtube"></i></a></li>
-                        </ul>
+            <div class="navWrapper">
+                <div class="logo"><a href="index.html"><img srcset="img/logoInMob.svg 800w, img/logo.png 1000w"
+                            sizes="(max-width: 800px) 800px, 1000px" src="img/logo.png" alt="Логотип"></a></div>
+                <div class="headerSocial">
+                    <div class="headerSocialBlock">
+                        <div class="phoneBlock">
+                            <a href="#"><i class="far fa-mobile"></i> 8 800 505 50 08</a>
+                        </div>
+                        <div class="burgerMenuInMobVesion">
+                            <i class="far fa-bars"></i>
+                        </div>
+                        <div class="socialBlock">
+                            <ul>
+                                <li><a href="#"><i class="far fa-envelope-open"></i></a></li>
+                                <li><a href="#"><i class="fab fa-facebook"></i></a></li>
+                                <li><a href="#"><i class="fab fa-instagram"></i></a></li>
+                                <li><a href="#"><i class="fab fa-youtube"></i></a></li>
+                            </ul>
+                        </div>
                     </div>
                 </div>
+                <menu class="headerNav">
+                    <ul>
+                        <li><a href="product.html">Мульчеры для экскаватаров DAH</a></li>
+                        <li><a href="product.html">Фронтальные мульчеры DAF</a></li>
+                        <li><a href="servis.html">Запчасти</a></li>
+                        <li><a href="contact.html">Контакты</a></li>
+                    </ul>
+                </menu>
             </div>
-            <menu class="headerNav">
-                <ul>
-                    <li><a href="#">Мульчеры для экскаватаров DAH</a></li>
-                    <li><a href="#">Фронтальные мульчеры DAF</a></li>
-                    <li><a href="servis.html">Запчасти</a></li>
-                    <li><a href="contact.html">Контакты</a></li>
-                </ul>
-            </menu>
+
         </nav>
     </header>
     <main>
         <section class="mainBlockProduct">
             <div class="textMainBlock">
                 <h1 class="mainTitle">Фронтальные мульчеры DAF</h1>
-                <h2 class="productSubTitle">Рабочая ширина - 65-145 см Диаметр срезаемой растительности - до 50 см Вес
-                    экскаватора - от 7 т. до 35 т
+                <h2 class="productSubTitle">
+                    <p>Рабочая ширина - 65-145 см</p>
+                    <p>Диаметр срезаемой растительности - до 50 см</p>
+                    <p>Вес экскаватора - от 7 т. до 35 т</p>
                 </h2>
-                <div class="button"><span>Стоимость</span><i class="far fa-chevron-right"></i></div>
+                <div class="button hero"><span>Стоимость</span><i class="far fa-chevron-right"></i></div>
             </div>
             <div class="imgBlock">
-                <img src="img/img1.jpg" alt="Тут должна быть картинка">
+                <img src="img/mainscreen.jpg" alt="Тут должна быть картинка">
             </div>
         </section>
         <section class="tableProduct">
             <h2 class="productTitle">Выберите модель</h2>
             <div class="listProductSelect">
                 <ul>
-                    <li>
-                        <div class="buttonList"><span>DAF-250Ex</span></div>
+                    <li class="btn">
+                        <a class="buttonList active"><span class="text">DAF-250Ex</span></a>
                     </li>
-                    <li>
-                        <div class="buttonList"><span>DAF-225E</span></div>
+                    <li class="btn">
+                        <a class="buttonList"><span class="text">DAF-225E</span></a>
                     </li>
-                    <li>
-                        <div class="buttonList"><span>DAF-180E</span></div>
+                    <li class="btn">
+                        <a class="buttonList"><span class="text">DAF-180E</span></a>
                     </li>
-                    <li>
-                        <div class="buttonList"><span>DAF-180D</span></div>
+                    <li class="btn">
+                        <a class="buttonList"><span class="text">DAF-180D</span></a>
                     </li>
                 </ul>
             </div>
@@ -115,6 +126,51 @@
                 </div>
             </div>
         </section>
+        <section class="technologyStats">
+            <div class="technologyBlock">
+                <div class="imbBlockTechnology">
+                    <img src="img/maxresdefault.jpg" alt="Фото техники">
+                </div>
+                <div class="tableTechnology">
+                    <div class="tableText">
+                        <div class="tableTextDescr">Рабочая ширина</div>
+                        <div class="tableTextHar">150 см</div>
+                    </div>
+                    <div class="tableText">
+                        <div class="tableTextDescr">Диаметр измельчаемого материала</div>
+                        <div class="tableTextHar">15 см</div>
+                    </div>
+                    <div class="tableText">
+                        <div class="tableTextDescr">Ножей на роторе</div>
+                        <div class="tableTextHar">10 шт</div>
+                    </div>
+                    <div class="tableText">
+                        <div class="tableTextDescr">Гидравлический поток</div>
+                        <div class="tableTextHar">105 л.мин</div>
+                    </div>
+                    <div class="tableText">
+                        <div class="tableTextDescr">Давление</div>
+                        <div class="tableTextHar">250 бар </div>
+                    </div>
+                    <div class="tableText">
+                        <div class="tableTextDescr">Диаметр ротора</div>
+                        <div class="tableTextHar">48 см </div>
+                    </div>
+                    <div class="tableText">
+                        <div class="tableTextDescr">Мощность носителя</div>
+                        <div class="tableTextHar">от 69 kW</div>
+                    </div>
+                    <div class="tableText">
+                        <div class="tableTextDescr">Скорость вращения ротора</div>
+                        <div class="tableTextHar">300 об/мин</div>
+                    </div>
+                    <div class="tableText">
+                        <div class="tableTextDescr">Вес</div>
+                        <div class="tableTextHar">1005 кг</div>
+                    </div>
+                </div>
+            </div>
+        </section>
         <section class="advantages">
             <h2 class="advantagesTitle">Преимущества</h2>
             <ul class="advatagesList">
@@ -134,7 +190,8 @@
             </ul>
             <div class="advantagesBlock">
                 <div class="appointments">
-                    <img src="img/5.png" alt="Назначени">
+                    <img src="img/maxresdefault.jpg" alt="Назначени">
+                    <div class="shadowMask"></div>
                     <div class="appText">
                         <h2>Назначение</h2>
                         <ul>
@@ -147,7 +204,8 @@
                     </div>
                 </div>
                 <div class="spheres">
-                    <img src="img/4.png" alt="Сферы примения">
+                    <img src="img/maxresdefault.jpg" alt="Сферы примения">
+                    <div class="shadowMask"></div>
                     <div class="appText">
                         <h2>Сферы применения</h2>
                         <ul>
@@ -161,7 +219,8 @@
                     </div>
                 </div>
                 <div class="base">
-                    <img src="img/2.png" alt="Базовые носители">
+                    <img src="img/maxresdefault.jpg" alt="Базовые носители">
+                    <div class="shadowMask"></div>
                     <div class="appText">
                         <h2>Базовые носители</h2>
                         <ul>
@@ -189,12 +248,14 @@
 
     </main>
     <footer>
-        <div class="logoFooterBlock"><img src="img/logo.png" alt="Логотип"></div>
-        <div class="lineFooterBlock"></div>
-        <div class="textFooterBlock">
-            <p>Политика конфеденциальности</p>
-            <p>© 2019 Madrog Group. Все права защищены </p>
-            <p>Created by ManaMake 2019</p>
+        <div class="footerWrapper">
+            <div class="logoFooterBlock"><img src="img/logo.png" alt="Логотип"></div>
+            <div class="lineFooterBlock"></div>
+            <div class="textFooterBlock">
+                <p>Политика конфеденциальности</p>
+                <p>© 2019 Madrog Group. Все права защищены </p>
+                <p>Created by ManaMake 2019</p>
+            </div>
         </div>
     </footer>
     <!-- Modal -->
@@ -203,9 +264,9 @@
             <img src="img/imgSlider.png" alt="" srcset="">
         </div>
     </div>
-    <div class="modalPopup">
+    <div class="modalPopup" id="child">
         <div class="modalBodyPopupS">
-            
+
         </div>
     </div>
     <!-- end -->

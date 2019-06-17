@@ -14,28 +14,37 @@
 <body>
     <header>
         <nav>
-            <div class="logo"><a href="index.html"><img src="img/logo.png" alt="Логотип"></a></div>
-            <div class="headerSocial">
-                <div class="headerSocialBlock">
-                    <div class="phoneBlock"><a hfre="#"><i class="far fa-mobile"></i> 8 (800) 505-58-12</a></div>
-                    <div class="socialBlock">
-                        <ul>
-                            <li><a href="#"><i class="far fa-envelope-open"></i></a></li>
-                            <li><a href="#"><i class="fab fa-facebook"></i></a></li>
-                            <li><a href="#"><i class="fab fa-instagram"></i></a></li>
-                            <li><a href="#"><i class="fab fa-youtube"></i></a></li>
-                        </ul>
+            <div class="navWrapper">
+                <div class="logo"><a href="index.html"><img srcset="img/logoInMob.svg 800w, img/logo.png 1000w"
+                            sizes="(max-width: 800px) 800px, 1000px" src="img/logo.png" alt="Логотип"></a></div>
+                <div class="headerSocial">
+                    <div class="headerSocialBlock">
+                        <div class="phoneBlock">
+                            <a href="#"><i class="far fa-mobile"></i> 8 800 505 50 08</a>
+                        </div>
+                        <div class="burgerMenuInMobVesion">
+                            <i class="far fa-bars"></i>
+                        </div>
+                        <div class="socialBlock">
+                            <ul>
+                                <li><a href="#"><i class="far fa-envelope-open"></i></a></li>
+                                <li><a href="#"><i class="fab fa-facebook"></i></a></li>
+                                <li><a href="#"><i class="fab fa-instagram"></i></a></li>
+                                <li><a href="#"><i class="fab fa-youtube"></i></a></li>
+                            </ul>
+                        </div>
                     </div>
                 </div>
+                <menu class="headerNav">
+                    <ul>
+                        <li><a href="product.html">Мульчеры для экскаватаров DAH</a></li>
+                        <li><a href="product.html">Фронтальные мульчеры DAF</a></li>
+                        <li><a href="servis.html">Запчасти</a></li>
+                        <li><a href="contact.html">Контакты</a></li>
+                    </ul>
+                </menu>
             </div>
-            <menu class="headerNav">
-                <ul>
-                    <li><a href="#">Мульчеры для экскаватаров DAH</a></li>
-                    <li><a href="#">Фронтальные мульчеры DAF</a></li>
-                    <li><a href="servis.html">Запчасти</a></li>
-                    <li><a href="contact.html">Контакты</a></li>
-                </ul>
-            </menu>
+
         </nav>
     </header>
     <main>
@@ -45,9 +54,9 @@
                 <div class="contactHeader">
                     Генеральное представительство DENIS CIMAF на территории Росии:
                 </div>
-                <div class="contactBody">   
+                <div class="contactBody">
                     <p>Россия, Смоленская область, Смоленский район, деревня Кореневщина, Промышленная улица, 4.</p>
-                    <p>Тел:<a href="#">+7 (4812) 248-000</a></p>
+                    <p>Тел: <a href="#">+7 (4812) 248-000</a></p>
                     <p>Почта: <a href="#">sales@madrog.ru</a></p>
                 </div>
                 <div class="contactFooter">
@@ -57,16 +66,20 @@
             </div>
         </section>
         <section class="contactMap">
-            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2301.506498727151!2d31.984667515298636!3d54.771063074742685!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x46ce578d5e7df7b1%3A0x570e4d9cae33ddc9!2z0JrRgNCw0YHQvdC40L3RgdC60L7QtSDRiC4sIDE0LCDQodC80L7Qu9C10L3RgdC6LCDQodC80L7Qu9C10L3RgdC60LDRjyDQvtCx0LsuLCAyMTQwMzA!5e0!3m2!1sru!2sru!4v1557742073814!5m2!1sru!2sru" height="450" frameborder="0" style="border:0" allowfullscreen></iframe>
+            <iframe
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d684.6225236377084!2d31.927916870489366!3d54.748557134605015!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x46ce57130896b3f7%3A0x11d89a85bfd05382!2z0JrQvtGA0LXQvdC10LLRidC40L3QsCwg0KHQvNC-0LvQtdC90YHQutCw0Y8g0L7QsdC7LiwgMjE0NTAx!5e0!3m2!1sru!2sru!4v1560763404378!5m2!1sru!2sru"
+                height="450" frameborder="0" style="border:0" allowfullscreen></iframe>
         </section>
     </main>
     <footer>
-        <div class="logoFooterBlock"><img src="img/logo.png" alt="Логотип"></div>
-        <div class="lineFooterBlock"></div>
-        <div class="textFooterBlock">
-            <p>Политика конфеденциальности</p>
-            <p>© 2019 Madrog Group. Все права защищены </p>
-            <p>Created by ManaMake 2019</p>
+        <div class="footerWrapper">
+            <div class="logoFooterBlock"><img src="img/logo.png" alt="Логотип"></div>
+            <div class="lineFooterBlock"></div>
+            <div class="textFooterBlock">
+                <p>Политика конфеденциальности</p>
+                <p>© 2019 Madrog Group. Все права защищены </p>
+                <p>Created by ManaMake 2019</p>
+            </div>
         </div>
     </footer>
 </body>

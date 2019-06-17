@@ -11,37 +11,41 @@
     <link href="https://fonts.googleapis.com/css?family=Oswald&amp;subset=cyrillic" rel="stylesheet">
 </head>
 
+
 <body>
     <header>
         <nav>
-            <div class="logo"><a href="index.html"><img srcset="img/logoInMob.svg 800w, img/logo.png 1000w"
-                        sizes="(max-width: 800px) 800px, 1000px" src="img/logo.png" alt="Логотип"></a></div>
-            <div class="headerSocial">
-                <div class="headerSocialBlock">
-                    <div class="phoneBlock">
-                        <a href="#"><i class="far fa-mobile"></i> 8 800 505 50 08</a>
-                    </div>
-                    <div class="burgerMenuInMobVesion">
-                        <i class="far fa-bars"></i>
-                    </div>
-                    <div class="socialBlock">
-                        <ul>
-                            <li><a href="#"><i class="far fa-envelope-open"></i></a></li>
-                            <li><a href="#"><i class="fab fa-facebook"></i></a></li>
-                            <li><a href="#"><i class="fab fa-instagram"></i></a></li>
-                            <li><a href="#"><i class="fab fa-youtube"></i></a></li>
-                        </ul>
+            <div class="navWrapper">
+                <div class="logo"><a href="index.html"><img srcset="img/logoInMob.svg 800w, img/logo.png 1000w"
+                            sizes="(max-width: 800px) 800px, 1000px" src="img/logo.png" alt="Логотип"></a></div>
+                <div class="headerSocial">
+                    <div class="headerSocialBlock">
+                        <div class="phoneBlock">
+                            <a href="#"><i class="far fa-mobile"></i> 8 800 505 50 08</a>
+                        </div>
+                        <div class="burgerMenuInMobVesion">
+                            <i class="far fa-bars"></i>
+                        </div>
+                        <div class="socialBlock">
+                            <ul>
+                                <li><a href="#"><i class="far fa-envelope-open"></i></a></li>
+                                <li><a href="#"><i class="fab fa-facebook"></i></a></li>
+                                <li><a href="#"><i class="fab fa-instagram"></i></a></li>
+                                <li><a href="#"><i class="fab fa-youtube"></i></a></li>
+                            </ul>
+                        </div>
                     </div>
                 </div>
+                <menu class="headerNav">
+                    <ul>
+                        <li><a href="product.html">Мульчеры для экскаватаров DAH</a></li>
+                        <li><a href="product.html">Фронтальные мульчеры DAF</a></li>
+                        <li><a href="servis.html">Запчасти</a></li>
+                        <li><a href="contact.html">Контакты</a></li>
+                    </ul>
+                </menu>
             </div>
-            <menu class="headerNav">
-                <ul>
-                    <li><a href="product.html">Мульчеры для экскаватаров DAH</a></li>
-                    <li><a href="product.html">Фронтальные мульчеры DAF</a></li>
-                    <li><a href="servis.html">Запчасти</a></li>
-                    <li><a href="contact.html">Контакты</a></li>
-                </ul>
-            </menu>
+
         </nav>
     </header>
     <main>
@@ -49,33 +53,36 @@
             <div class="textMainBlock">
                 <h1 class="mainTitle">Мульчеры Denis Cimaf</h1>
                 <h2 class="subTitle">Потрошитель леса</h2>
-                <div class="button callBack"><span>выбрать</span><i class="far fa-chevron-right"></i></div>
+                <a href="#selectMost"><div class="button"><span>выбрать</span><i class="far fa-chevron-right mainArr"></i></div></a>
             </div>
             <div class="imgBlock">
-                <img src="img/img1.jpg" alt="Тут должна быть картинка">
+                <img src="img/mainscreen.jpg" alt="Тут должна быть картинка">
             </div>
         </section>
         <section class="blockVariantImg">
             <a href="#">
                 <div class="blockImg">
-                    <img src="img/img1.jpg" alt="">
+                    <div class="hoveShowSee"></div>
+                    <img src="img/screen1.jpg" alt="">
                     <p>Посмотреть</p>
                 </div>
             </a>
             <a href="#">
                 <div class="blockImg">
-                    <img src="img/img1.jpg" alt="">
+                    <div class="hoveShowCall"></div>
+                    <img src="img/screen1.jpg" alt="">
                     <p>Позвонить</p>
                 </div>
             </a>
             <a href="#">
                 <div class="blockImg">
-                    <img src="img/img1.jpg" alt="">
+                    <div class="hoveShowRead"></div>
+                    <img src="img/screen1.jpg" alt="">
                     <p>Написать</p>
                 </div>
             </a>
         </section>
-        <section class="selectMonst">
+        <section class="selectMonst" id="selectMost">
             <h1 class="monstTitle">Выбери свой мульчер</h1>
             <p class="monstSubTitle">Промышленные мульчеры Denis Cimaf созданы по передовой запатентованной технологии
                 измельчения древесины, обеспечивающей максимально высокую производительность за счет небольшой мощности.
@@ -96,7 +103,9 @@
                     <div class="mostrBlockHover">
                         <div class="hoverContent">
                             <h2 class="mostrBlockHoverTitle">Мульчеры ля фронтальных погрузчиков DAF-серия.</h2>
-                            <a href="product.html"><div class="button"><span>Параметры</span><i class="far fa-chevron-right"></i></div></a>
+                            <a href="product.html">
+                                <div class="button"><span>Параметры</span><i class="far fa-chevron-right"></i></div>
+                            </a>
                         </div>
                     </div>
                     <img src="img/screen2.jpg" alt="Мульчеры">
@@ -130,19 +139,22 @@
         </section>
     </main>
     <footer>
-        <div class="logoFooterBlock"><img src="img/logo.png" alt="Логотип"></div>
-        <div class="lineFooterBlock"></div>
-        <div class="textFooterBlock">
-            <p>Политика конфеденциальности</p>
-            <p>© 2019 Madrog Group. Все права защищены </p>
-            <p>Created by ManaMake 2019</p>
+        <div class="footerWrapper">
+            <div class="logoFooterBlock"><img src="img/logo.png" alt="Логотип"></div>
+            <div class="lineFooterBlock"></div>
+            <div class="textFooterBlock">
+                <p>Политика конфеденциальности</p>
+                <p>© 2019 Madrog Group. Все права защищены </p>
+                <p>Created by ManaMake 2019</p>
+            </div>
         </div>
     </footer>
-    <div class="modalPopup">
+    <div class="modalPopup" id="child">
         <div class="modalBodyPopupS">
 
         </div>
     </div>
+
     <script type="text/javascript" src="js/jquery-1.11.0.min.js"></script>
     <script type="text/javascript" src="js/jquery-migrate-1.2.1.min.js"></script>
     <script type="text/javascript" src="slick/slick.min.js"></script>

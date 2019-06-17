@@ -5,12 +5,17 @@
 
 html {
     font-size: 4px;
+    height: 100%;
 }
 
 body {
     padding: 0;
     margin: 0;
     overflow-x: hidden;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    background-color: #1A1717;
 }
 
 img,
@@ -68,7 +73,28 @@ iframe {
     --popupGradient: linear-gradient(180deg, rgba(13, 14, 13, 1)0%, rgba(15, 19, 16, 1) 100%);
     --monstGradient: rgba(21, 21, 21, 0.8);
     --bgGradient: linear-gradient(14.76deg, rgba(21, 21, 21, 0.8) 18.61%, rgba(21, 21, 21, 0.3) 37.63%, rgba(21, 21, 21, 0) 90.23%);
+    --hoverShowSeeB: linear-gradient(14.76deg, rgba(21, 21, 21, 0.8) 18.61%, rgba(21, 21, 21, 0.3) 37.63%, rgba(21, 21, 21, 0) 90.23%);
+    --hoverShowSeeH: linear-gradient(2.36deg, rgba(21, 21, 21, 0.8) 4.05%, rgba(21, 21, 21, 0.5) 58.95%, rgba(21, 21, 21, 0) 96.85%);
+    --hoverShowCallB: linear-gradient(194.86deg, rgba(21, 21, 21, 0) 8.61%, rgba(21, 21, 21, 0.3) 40.97%, #151515 88.27%);
+    --hoverShowCallH: linear-gradient(2.87deg, rgba(21, 21, 21, 0.8) 4.05%, rgba(21, 21, 21, 0.5) 58.95%, rgba(21, 21, 21, 0) 96.85%);
+    --hoverShowReadB: linear-gradient(222.8deg, rgba(21, 21, 21, 0) 0%, rgba(21, 21, 21, 0.3) 58.33%, #151515 100%);
+    --hoverShowReadH: linear-gradient(2.87deg, rgba(21, 21, 21, 0.8) 4.05%, rgba(21, 21, 21, 0.5) 58.95%, rgba(21, 21, 21, 0) 96.85%);
     font-family: 'Oswald', sans-serif;
+}
+
+
+
+main {
+    // margin-top: 10px;
+    position: relative;
+    z-index: 0;
+    flex: 1 0 auto;
+
+    @media (min-width: 1366px) {
+        width: 1366px;
+        margin: 0 auto;
+    }
+
 }
 
 a {
@@ -122,6 +148,15 @@ button {
     }
 }
 
+@keyframes hoverLink{
+    0%{
+        opacity: 0.75;
+    }
+    100%{
+        opacity: 1;
+    }
+}
+
 @keyframes hoverMany {
     0% {
         padding: 0;
@@ -151,6 +186,7 @@ button {
     &:hover {
         background: var(--greenBnt);
         color: var(--mainFontColor);
+        animation: 0.3s hoverLinkButton;
     }
 
     &>span {
@@ -158,28 +194,63 @@ button {
     }
 }
 
+@keyframes hoverLinkButton{
+    0%{
+        background: transparent;
+        color: #000;
+    }
+    100%{
+        background: var(--greenBnt);
+        color: var(--mainFontColor);
+    }
+}
+
+.active {
+    background: var(--greenBnt);
+
+    span {
+        color: var(--mainFontColor);
+    }
+
+}
+
+.hide {
+    display: none !important;
+}
+
+.show {
+    display: flex;
+}
 
 // Main
 
 header {
     background-color: var(--mainColor);
     display: flex;
-
+    position: relative;
+    z-index: 1;
 }
 
 nav {
     background-color: var(--mainColor);
-    display: grid;
-    grid-template-columns: v(336) 1fr;
-    grid-template-rows: auto;
-    grid-template-areas: "logo social""logo navMenu";
-    overflow: hidden;
+    display: flex;
     min-width: 100%;
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+
 
     @media (max-width: 800px) {
         grid-template-columns: v(116) 1fr;
     }
+}
+
+.navWrapper {
+    width: 1366px;
+    display: grid;
+    grid-template-columns: v(336) 1fr;
+    grid-template-rows: auto;
+    grid-template-areas: "logo social""logo navMenu";
+    margin: 0 auto;
+
 }
 
 .logo {
@@ -200,6 +271,7 @@ nav {
     grid-area: social;
     font-size: v(16);
     line-height: v(24);
+    padding: 0 v(152);
 
     ul {
         list-style: none;
@@ -243,6 +315,12 @@ nav {
                 padding-right: 0;
             }
         }
+        a{
+            &:hover{
+                opacity: 1;
+                animation: 300ms hoverLink;
+            }
+        }
     }
 }
 
@@ -250,7 +328,12 @@ nav {
     color: var(--mainFontColor);
     display: flex;
     align-items: center;
-
+    &:hover{
+        a{
+            opacity: 1;
+            animation: 300ms hoverLink
+        }
+    }
     i {
         margin-right: v(8);
     }
@@ -267,9 +350,10 @@ nav {
     background-color: #fff;
     display: flex;
     align-items: center;
-    justify-content: center;
+    justify-content: flex-start;
+    padding-left: v(152);
     transform: skewX(-30deg);
-    width: 100%;
+    width: 200%;
 
     &>* {
         transform: skewX(30deg);
@@ -281,6 +365,10 @@ nav {
 
         a {
             color: #000;
+            &:hover{
+                opacity: 1;
+                animation: 0.3s hoverLink;
+            }
         }
 
         li {
@@ -301,8 +389,12 @@ nav {
 .headerSocialBlock {
     display: flex;
     justify-content: space-between;
-    width: 70%;
-    margin: 0 auto;
+    width: 100%;
+    margin: 0;
+
+    @media (min-width: 1368) {
+        widows: 96%;
+    }
 }
 
 // firstBlock
@@ -313,6 +405,7 @@ nav {
     color: var(--mainFontColor);
     text-transform: uppercase;
     display: flex;
+    overflow: hidden;
 }
 
 .mainBlock {
@@ -323,10 +416,11 @@ nav {
 
 .mainBlockProduct {
     .imgBlock {
-        transform: skewX(23deg) translateX(15.5%);
+        transform: skewX(23deg) translateX(19%);
 
         img {
-            transform: skewX(-23deg) translateX(-14%);
+            transform: skewX(-23deg) translateX(-17%);
+            
         }
 
         @media (max-width: 800px) {
@@ -346,9 +440,13 @@ nav {
     flex-direction: column;
     align-items: center;
     margin: v(96) auto;
-    padding: v(24) 0;
+    padding: v(24) 0 0 v(48);
     text-align: left;
     transform: translateX(v(72));
+
+    a{
+        opacity: 1;
+    }
 
     @media (max-width: 800px) {
         position: absolute;
@@ -384,7 +482,7 @@ nav {
 }
 
 .imgBlock {
-    transform: skewX(23deg) translateX(14.5%);
+    transform: skewX(23deg) translateX(19%);
     width: 100%;
     background-size: cover;
     margin-left: auto;
@@ -399,7 +497,7 @@ nav {
     }
 
     img {
-        transform: skewX(-23deg) translateX(-12%);
+        transform: skewX(-23deg) translateX(-17%);
         min-width: 100%;
         min-height: 100%;
         z-index: 5;
@@ -423,7 +521,7 @@ nav {
 .blockVariantImg {
     background: #fff;
     display: flex;
-    justify-content: space-around;
+    justify-content: center;
     align-items: center;
 
     @media (max-width: 800px) {
@@ -461,7 +559,58 @@ nav {
     display: flex;
     flex-direction: column;
     background: var(--bgGradient);
+    position: relative;
+}
 
+.hoveShowSee,
+.hoveShowCall,
+.hoveShowRead{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+.hoveShowSee{
+    background: var(--hoverShowSeeB);
+}
+.hoveShowCall{
+    background: var(--hoverShowCallB);
+}
+.hoveShowRead{
+    background: var(--hoverShowReadB);
+}
+
+a:nth-child(2),
+a:nth-child(3) {
+    .blockImg {
+        width: v(336);
+        height: v(216);
+    }
+}
+
+a:nth-child(1){
+    .blockImg:hover{
+        .hoveShowSee{
+            background: var(--hoverShowSeeH);
+        }
+    }
+}
+
+a:nth-child(2){
+    margin: 0 v(24);
+    .blockImg:hover{
+        .hoveShowCall{
+            background: var(--hoverShowCallH);
+        }
+    }
+}
+a:nth-child(3){
+    .blockImg:hover{
+        .hoveShowRead{
+            background: var(--hoverShowReadH);
+        }
+    }
 }
 
 // Select Monster
@@ -563,7 +712,7 @@ nav {
 
         img {
             z-index: 1;
-            transform: skewX(20deg) translateX(28%);
+            transform: skewX(20deg) translateX(19%);
             min-width: 100%;
             min-height: 100%;
             overflow: hidden;
@@ -574,7 +723,7 @@ nav {
         }
 
         .mostrBlockHover {
-            transform: skewX(20deg) translateX(v(182));
+            transform: skewX(20deg) translateX(v(120));
         }
 
         @media (max-width: 800px) {
@@ -596,13 +745,13 @@ nav {
 
         img {
             z-index: 1;
-            transform: skewX(20deg) translateX(-28%);
+            transform: skewX(20deg) translateX(-19%);
             min-width: 100%;
             min-height: 100%;
         }
 
         .mostrBlockHover {
-            transform: skewX(20deg) translateX(v(-184));
+            transform: skewX(20deg) translateX(v(-124));
         }
 
         .hoverContent {
@@ -647,6 +796,7 @@ nav {
 .social {
     display: flex;
     flex-direction: column;
+    background-color: #fff;
 }
 
 .socialTitle {
@@ -666,6 +816,7 @@ nav {
     grid-template-rows: v(300);
     grid-template-areas: "yt inst face";
     overflow: hidden;
+
     @media (max-width: 800px) {
         grid-template-columns: min(100%);
         grid-template-areas: "yt""inst""face";
@@ -730,6 +881,15 @@ footer {
     display: flex;
     flex-direction: column;
     background: var(--mainColor);
+    width: 1366px;
+    margin: auto;
+    flex: 0 0 auto;
+}
+
+.footerWrapper{
+    display: flex;
+    flex-direction: column;
+    margin: 0 9%;
 }
 
 .logoFooterBlock {
@@ -740,7 +900,7 @@ footer {
     background: #FFF;
     opacity: 0.25;
     height: 2px;
-    margin: 0 v(48);
+    // margin: 0 v(48);
 }
 
 .textFooterBlock {
@@ -780,6 +940,7 @@ footer {
 .tableProduct {
     display: flex;
     flex-direction: column;
+    background-color: #fff;
 }
 
 .productTitle {
@@ -793,14 +954,20 @@ footer {
 .listProductSelect {
     margin: 0 auto v(32);
 
+    a {
+        opacity: 1;
+        color: #000;
+    }
+
     ul {
         display: flex;
-
     }
 }
 
 .technologyStats {
     display: flex;
+    background: #fff;
+    padding-bottom: v(48);
 }
 
 .technologyBlock {
@@ -827,10 +994,7 @@ footer {
     }
 }
 
-.technologyStats {
-    display: flex;
-    margin-bottom: v(48);
-}
+
 
 .tableTextDescr {
     padding-left: v(24);
@@ -849,6 +1013,7 @@ footer {
 .advantages {
     display: flex;
     flex-direction: column;
+    background: #fff;
 }
 
 .advantagesTitle {
@@ -878,9 +1043,62 @@ footer {
 .spheres,
 .base {
     position: relative;
+    width: v(360);
+    height: v(386);
 
     img {
         z-index: 1;
+        min-width: 100%;
+        min-height: 100%;
+    }
+}
+
+.shadowMask {
+    z-index: 2;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.appointments {
+    .shadowMask {
+        background: linear-gradient(270deg, rgba(21, 21, 21, 0.4) 34.81%, #242424 100%);
+    }
+
+    &:hover {
+        .shadowMask {
+            background: linear-gradient(270deg, rgba(21, 21, 21, 0.7) 34.81%, #242424 100%);
+        }
+    }
+}
+
+.spheres {
+    .shadowMask {
+        background: linear-gradient(270deg, rgba(21, 21, 21, 0.4) 39.23%, #242424 100%);
+    }
+
+    &:hover {
+        .shadowMask {
+            background: linear-gradient(270deg, rgba(21, 21, 21, 0.7) 39.23%, #242424 100%);
+        }
+    }
+}
+
+.base {
+    .shadowMask {
+        background: linear-gradient(270deg, rgba(21, 21, 21, 0.4) 68.51%, #242424 100%);
+    }
+
+    &:hover {
+        .shadowMask {
+            background: linear-gradient(270deg, rgba(21, 21, 21, 0.7) 32.81%, #242424 100%);
+        }
+
+        ul {
+            list-style: none;
+        }
     }
 }
 
@@ -936,6 +1154,7 @@ footer {
 .tableSlider {
     display: flex;
     flex-direction: column;
+    background: #fff;
 
     .imgInSlider {
         width: v(360);
@@ -990,6 +1209,7 @@ footer {
 .contact {
     display: flex;
     flex-direction: column;
+    background: #fff;
 }
 
 .contactTitle {
@@ -1000,6 +1220,8 @@ footer {
 }
 
 .contactBlockText {
+    font-style: normal;
+    font-weight: 700;
     font-size: v(16);
     line-height: v(24);
     text-align: center;
@@ -1009,7 +1231,6 @@ footer {
 }
 
 .contactHeader {
-    font-weight: 500;
     margin-bottom: v(24);
 }
 
@@ -1025,6 +1246,7 @@ footer {
 
         &:hover {
             opacity: 1;
+            animation: 0.3s hoverLink;
         }
     }
 
@@ -1040,6 +1262,7 @@ footer {
 
         &:hover {
             opacity: 1;
+            animation: 0.3s hoverLink;
         }
     }
 }
@@ -1047,23 +1270,33 @@ footer {
 .contactMap {
     iframe {
         min-width: 100%;
+        filter: invert(100%);
     }
 }
 
 // Servis
 
 .servis {
-    margin: v(48) auto;
+    margin: 0 auto;
+    padding: v(48) 0;
     display: flex;
+    background-color: #fff;
+    @media (min-width: 1367px){
+        min-height: 100%;
+    }
 }
 
 .servisBlock {
     display: flex;
     margin: 0 auto;
+    
 }
 
 .servisBlockText {
     width: v(552);
+    .button{
+        margin: 0 auto;
+    }
 }
 
 .servisTitle {
@@ -1073,9 +1306,10 @@ footer {
 }
 
 .servisTextDescr {
-    font-weight: normal;
+    font-style: normal;
+    font-weight: 500;
     font-size: v(16);
-    line-height: v(24);
+    line-height: v(32);
     margin: v(24) 0;
     border-radius: 4px;
 }
@@ -1136,8 +1370,9 @@ footer {
 .modalBodyPopupS {
     display: flex;
     flex-direction: column;
+    align-content: center;
     width: v(360);
-    height: v(672);
+    height: 100vh;
     background: var(--popupGradient);
     border: 1px solid var(--borderColor);
     box-sizing: border-box;
@@ -1153,6 +1388,10 @@ footer {
     letter-spacing: 0.08em;
     text-transform: uppercase;
     text-align: center;
+    padding: 0 0 v(24);
+    @media (max-width: 1366px){
+        padding: 0;
+    }
 }
 
 .modalSubTitle {
@@ -1163,6 +1402,12 @@ footer {
     text-align: center;
     color: #fff;
 }
+
+.mainBodyModal{
+    @media (min-width: 1367){
+        margin: auto;
+    }
+} 
 
 .modalPopupTitle {
     margin: v(48) 0 v(24);
@@ -1180,7 +1425,10 @@ footer {
     display: flex;
     flex-direction: column;
     color: #fff;
-    padding: 0 v(24);
+    padding: v(24) v(24) 0;
+    @media (max-width: 1366px){
+        padding: 0 v(24);
+    }
 
     label {
         text-align: left;
@@ -1189,6 +1437,7 @@ footer {
         line-height: v(17);
         letter-spacing: 0.08em;
         text-transform: uppercase;
+        padding-bottom: v(4);
 
         &:last-child {
             text-transform: none;
@@ -1209,6 +1458,9 @@ footer {
         box-sizing: border-box;
         border-radius: 4px;
         background-color: rgba(255, 255, 255, 0.9);
+        @media (max-width: 1366px){
+            margin-bottom: v(12);
+        }
     }
 
     textarea {
@@ -1233,12 +1485,15 @@ footer {
     line-height: v(17);
     margin: v(16) 0 v(28);
     display: flex;
+    @media (max-width: 1366px){
+        margin-bottom: v(14);
+    }
 
     input {
         align-self: flex-start;
         margin-right: v(8);
         margin-bottom: 0;
-        margin-top: v(12);
+        margin-top: v(-12);
     }
 
     a {

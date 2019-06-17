@@ -14,28 +14,37 @@
 <body>
     <header>
         <nav>
-            <div class="logo"><a href="index.html"><img src="img/logo.png" alt="Логотип"></a></div>
-            <div class="headerSocial">
-                <div class="headerSocialBlock">
-                    <div class="phoneBlock"><a hfre="#"><i class="far fa-mobile"></i> 8 (800) 505-58-12</a></div>
-                    <div class="socialBlock">
-                        <ul>
-                            <li><a href="#"><i class="far fa-envelope-open"></i></a></li>
-                            <li><a href="#"><i class="fab fa-facebook"></i></a></li>
-                            <li><a href="#"><i class="fab fa-instagram"></i></a></li>
-                            <li><a href="#"><i class="fab fa-youtube"></i></a></li>
-                        </ul>
+            <div class="navWrapper">
+                <div class="logo"><a href="index.html"><img srcset="img/logoInMob.svg 800w, img/logo.png 1000w"
+                            sizes="(max-width: 800px) 800px, 1000px" src="img/logo.png" alt="Логотип"></a></div>
+                <div class="headerSocial">
+                    <div class="headerSocialBlock">
+                        <div class="phoneBlock">
+                            <a href="#"><i class="far fa-mobile"></i> 8 800 505 50 08</a>
+                        </div>
+                        <div class="burgerMenuInMobVesion">
+                            <i class="far fa-bars"></i>
+                        </div>
+                        <div class="socialBlock">
+                            <ul>
+                                <li><a href="#"><i class="far fa-envelope-open"></i></a></li>
+                                <li><a href="#"><i class="fab fa-facebook"></i></a></li>
+                                <li><a href="#"><i class="fab fa-instagram"></i></a></li>
+                                <li><a href="#"><i class="fab fa-youtube"></i></a></li>
+                            </ul>
+                        </div>
                     </div>
                 </div>
+                <menu class="headerNav">
+                    <ul>
+                        <li><a href="product.html">Мульчеры для экскаватаров DAH</a></li>
+                        <li><a href="product.html">Фронтальные мульчеры DAF</a></li>
+                        <li><a href="servis.html">Запчасти</a></li>
+                        <li><a href="contact.html">Контакты</a></li>
+                    </ul>
+                </menu>
             </div>
-            <menu class="headerNav">
-                <ul>
-                    <li><a href="#">Мульчеры для экскаватаров DAH</a></li>
-                    <li><a href="#">Фронтальные мульчеры DAF</a></li>
-                    <li><a href="servis.html">Запчасти</a></li>
-                    <li><a href="contact.html">Контакты</a></li>
-                </ul>
-            </menu>
+
         </nav>
     </header>
     <main>
@@ -60,17 +69,19 @@
         </section>
     </main>
     <footer>
-        <div class="logoFooterBlock"><img src="img/logo.png" alt="Логотип"></div>
-        <div class="lineFooterBlock"></div>
-        <div class="textFooterBlock">
-            <p>Политика конфеденциальности</p>
-            <p>© 2019 Madrog Group. Все права защищены </p>
-            <p>Created by ManaMake 2019</p>
+        <div class="footerWrapper">
+            <div class="logoFooterBlock"><img src="img/logo.png" alt="Логотип"></div>
+            <div class="lineFooterBlock"></div>
+            <div class="textFooterBlock">
+                <p>Политика конфеденциальности</p>
+                <p>© 2019 Madrog Group. Все права защищены </p>
+                <p>Created by ManaMake 2019</p>
+            </div>
         </div>
     </footer>
     <div class="modalPopup">
         <div class="modalBodyPopupS">
-            
+
         </div>
     </div>
     <script type="text/javascript" src="js/jquery-1.11.0.min.js"></script>
